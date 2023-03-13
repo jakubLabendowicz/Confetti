@@ -9,20 +9,20 @@ function generate() {
   body.appendChild(animationSection);
 
   for (var i = 0; i < 100; i++) {
-    const animationLeaf = document.createElement("div");
-    animationLeaf.classList.add("animationItem");
-    animationLeaf.style.left = `${Math.random()*100}vw`;
-    animationLeaf.style.top = `calc(-${Math.random()*500}px - 100px)`;
-    animationLeaf.style.transform = `rotate(${Math.random()*360}deg)`;
+    const animationItem = document.createElement("div");
+    animationItem.classList.add("animationItem");
+    animationItem.style.left = `${Math.random()*100}vw`;
+    animationItem.style.top = `calc(-${Math.random()*500}px - 100px)`;
+    animationItem.style.transform = `rotate(${Math.random()*360}deg)`;
     var leftright = Math.round(Math.random()*1);
     if (leftright == 0) {
-      animationLeaf.style.animation = `itemAnimationLeft calc(${Math.random()*5}s + 1s)`;
+      animationItem.style.animation = `itemAnimationLeft calc(${Math.random()*5}s + 1s)`;
     } else if (leftright == 1) {
-      animationLeaf.style.animation = `itemAnimationRight calc(${Math.random()*5}s + 1s)`;
+      animationItem.style.animation = `itemAnimationRight calc(${Math.random()*5}s + 1s)`;
     }
 
     const animationSection = document.querySelector("#animationSection" + animationNumber);
-    animationSection.appendChild(animationLeaf);
+    animationSection.appendChild(animationItem);
   }
 
   animationNumber++;
